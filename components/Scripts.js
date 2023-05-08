@@ -13,6 +13,12 @@ const Scripts = () => {
           data-ackee-domain-id={BLOG.analytics.ackeeConfig.domainId}
         />
       )}
+      {BLOG.analytics && BLOG.analytics.provider === 'umami' && (
+        <Script async 
+          src={BLOG.analytics.umamiConfig.tracker}
+          data-ackee-website-id={BLOG.analytics.umamiConfig.websiteId}
+        />
+      )}
       {BLOG.analytics && BLOG.analytics.provider === 'ga' && (
         <>
           <Script
